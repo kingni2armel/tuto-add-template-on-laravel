@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('dashboard',[PageController::class,'getpageDashboard'])->name('passy');
+
+Route::get('add-user',[PageController::class,'adduser'])->name('adduser');
